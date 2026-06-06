@@ -1,7 +1,0 @@
-windows:
-  installs: |
-    winget install Python.Python.3 -h
-    (Invoke-WebRequest -Uri https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py -UseBasicParsing).Content | python -
-
-darwin:
-  installs: brew install pdm

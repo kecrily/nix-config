@@ -1,9 +1,0 @@
-windows:
-  installs: winget install GnuPG.Gpg4win -h
-
-darwin:
-  installs: brew install --cask gpg-suite
-  links:
-    gpg.conf: ~/.gnupg/gpg.conf
-    gpg-agent.conf: ~/.gnupg/gpg-agent.conf
-    sshcontrol: ~/.gnupg/sshcontrol

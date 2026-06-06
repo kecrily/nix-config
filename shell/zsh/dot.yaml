@@ -1,4 +1,0 @@
-darwin:
-  links:
-    .zshrc: ~/.zshrc
-    .zshenv: ~/.zshenv

@@ -3,18 +3,19 @@
   "window.commandCenter": true,
   "window.menuBarVisibility": "toggle",
   "workbench.layoutControl.enabled": false,
+  "workbench.commandPalette.experimental.suggestCommands": true,
 
   // Style
   "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.preferredDarkColorTheme": "GitHub Dark Default",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark Colorblind (Beta)",
   "workbench.preferredHighContrastLightColorTheme": "GitHub Light Colorblind (Beta)",
+  "workbench.iconTheme": "material-icon-theme",
 
   // Animation
   "editor.smoothScrolling": true,
-  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSmoothCaretAnimation": "explicit",
   "editor.minimap.renderCharacters": false,
   "workbench.list.smoothScrolling": true,
   "terminal.integrated.smoothScrolling": true,
@@ -22,9 +23,9 @@
   // Editor
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
   "editor.formatOnType": true,
   "editor.linkedEditing": true,
@@ -32,30 +33,38 @@
   "editor.stickyScroll.enabled": true,
   "editor.inlineSuggest.enabled": true,
   "editor.experimental.asyncTokenization": true,
-  "editor.accessibilitySupport": "off",
   "editor.inlayHints.enabled": "onUnlessPressed",
   "editor.wordSeparators": "`~@#$%^&*-=+\\|'\"_,./!?;:()[]{}<>，、。！？：；…—（）【】《》〈〉“”‘’「」『』",
+  "editor.experimental.preferTreeSitter.css": true,
+  "editor.experimental.preferTreeSitter.ini": true,
+  "editor.experimental.preferTreeSitter.regex": true,
+  "editor.experimental.preferTreeSitter.typescript": true,
+  "editor.experimentalGpuAcceleration": "on",
+  "editor.experimentalEditContextEnabled": true,
   "files.insertFinalNewline": true,
   "files.eol": "\n",
+  "files.autoGuessEncoding": true,
 
   // Explorer
+  "files.dialog.defaultPath": "/Users/kecrily/desktop/project/github.com",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
-  "explorer.fileNesting.patterns": {
-    "package*": "package-lock.json, yarn.lock, pnpm-*.yaml, netlify.toml, vercel.json, .git*, _*",
-    "tsconfig.json": "${basename}*.json, index.html, *.config.cjs, *.config.mjs, *.config.js, *.config.ts, *.d.ts, .prettier*, .editorconfig, .eslint*, .commitlintrc, cspell.json",
-    "readme*": "README-*, LICENSE*, CHANGELOG*, CODE_OF_CONDUCT*, CONTRIBUTING*, AUTHORS*, SECURITY*, MAINTAINERS, DCO",
-    "*.md": "${capture}.*.md, ${capture}_*.md",
-    "Makefile": "BSDmakefile",
-    "go.mod": "go.sum",
-    "dockerfile": ".dockerignore, docker-compose.*, dockerfile*",
-    "*.js": "${capture}.js.map"
-  },
-  "files.exclude": { "**/node_modules": true },
+  "search.useIgnoreFiles": true,
   "search.exclude": {
-    "**/package-lock.json": true, "**/yarn.lock": true, "**/pnpm-lock.yaml": true,
-    "**/dist": true, "**/output": true
+    "**/package-lock.json": true,
+    "**/yarn.lock": true,
+    "**/pnpm-lock.yaml": true,
+    "bun.lockb": true,
+    "**/dist": true,
+    "**/output": true,
+    "**/go.sum": true
   },
+
+  // Terminal
+  "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.enableImages": true,
+  "terminal.integrated.rescaleOverlappingGlyphs": true,
+  "terminal.integrated.fontLigatures.enabled": true,
 
   // Git
   "git.autofetch": true,
@@ -65,26 +74,38 @@
   "git.enableCommitSigning": true,
   "git.allowNoVerifyCommit": true,
   "diffEditor.diffAlgorithm": "advanced",
-  "diffEditor.experimental.useVersion2": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.experimental.showMoves": true,
   "diffEditor.experimental.showEmptyDecorations": true,
-  
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.experimental.useTrueInlineView": true,
   "git.mergeEditor": true,
   "mergeEditor.diffAlgorithm": "advanced",
   "merge-conflict.autoNavigateNextConflict.enabled": true,
 
+  // Notebook
+  "notebook.output.minimalErrorRendering": true,
+
   // TypeScript
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "typescript.tsserver.watchOptions": "vscode",
+  "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
 
   // ESLint
+  "eslint.useFlatConfig": true,
   "eslint.lintTask.enable": true,
   "eslint.codeAction.showDocumentation": { "enable": true },
   "eslint.validate": [
     "markdown",
-    "vue", "html",
-    "javascript", "typescript",
-    "javascriptreact", "typescriptreact",
-    "json", "jsonc", "json5", "yaml"
+    "vue",
+    "html",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "json",
+    "jsonc",
+    "json5",
+    "yaml"
   ],
 
   // Markdown
@@ -92,13 +113,18 @@
   "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
   "markdown.updateLinksOnFileMove.enabled": "always",
   "markdown.preview.typographer": true,
+  "markdown.experimental.updateLinksOnPaste": true,
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": { "comments": "off", "strings": "off", "other": "off" }
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
   },
 
   // Telemetry
+  "update.mode": "none",
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false
 }

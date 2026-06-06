@@ -1,7 +1,0 @@
-windows:
-  installs: |
-    Install-Module PSReadLine -AllowPrerelease -Scope CurrentUser -Force
-    PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
-  links:
-    Profile.ps1: ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1
-    powershell.config.json: ~/Documents/Powershell/powershell.config.json

@@ -1,7 +1,0 @@
-windows:
-  installs: winget install Rustlang.Rustup -h
-
-darwin:
-  installs: |
-    brew install rustup-init
-    rustup-init -y
