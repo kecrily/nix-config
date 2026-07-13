@@ -65,6 +65,6 @@
         ];
       };
 
-      formatter."${system}" = nixpkgs.legacyPackages."${system}".nixfmt;
+      formatter."${system}" = nixpkgs.legacyPackages."${system}".nixfmt-tree;
     };
 }
