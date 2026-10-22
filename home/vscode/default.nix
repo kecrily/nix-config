@@ -12,5 +12,5 @@ in
   };
 
   home.file."${vscodeHome}/settings.json".source =
-    config.lib.file.mkOutOfStoreSymlink /etc/nix-darwin/home/vscode/./settings.json;
+    config.lib.file.mkOutOfStoreSymlink /etc/nix-darwin/home/vscode/settings.json;
 }
