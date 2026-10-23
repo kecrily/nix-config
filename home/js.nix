@@ -11,7 +11,7 @@
     bun
   ];
 
-  programs.zsh.sessionVariables = {
+  home.sessionVariables = {
     NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
     NPM_CONFIG_CACHE = "${config.xdg.cacheHome}/npm";
     PNPM_HOME = "${config.xdg.dataHome}/pnpm";

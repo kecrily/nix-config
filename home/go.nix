@@ -8,7 +8,8 @@
     enable = true;
     env.GOPATH = "${config.xdg.dataHome}/go";
   };
-  programs.zsh.sessionVariables = {
+
+  home.sessionVariables = {
     "GOMODCACHE" = "${config.xdg.cacheHome}/go/mod";
   };
 }

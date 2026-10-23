@@ -32,7 +32,7 @@ in
     maxCacheTtl = 7200;
   };
 
-  programs.zsh.sessionVariables = {
+  home.sessionVariables = {
     GNUPGHOME = gpgHome;
     SSH_AUTH_SOCK = "${config.xdg.dataHome}/gnupg/S.gpg-agent.ssh";
   };

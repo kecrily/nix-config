@@ -7,7 +7,7 @@
 {
   home.packages = with pkgs; [ orbstack ];
 
-  programs.zsh.sessionVariables = {
+  home.sessionVariables = {
     "DOCKER_CONFIG" = "${config.xdg.dataHome}/docker";
   };
 }
