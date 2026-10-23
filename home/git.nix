@@ -67,8 +67,11 @@
     ];
   };
 
+  programs.github-copilot-cli = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     ghq
-    github-copilot-cli
   ];
 }
