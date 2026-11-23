@@ -14,6 +14,7 @@
     ./rust.nix
     ./docker.nix
     ./vscode
+    ./github
   ];
 
   home.packages = with pkgs; [
@@ -45,8 +46,6 @@
     gleam
 
     raycast
-
-    act
 
     obsidian
   ];
