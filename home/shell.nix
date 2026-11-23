@@ -5,7 +5,6 @@
     fish
 
     alacritty
-    kitty
 
     less
     ripgrep
@@ -46,6 +45,15 @@
       prefers_reduced_motion = true;
       show_help = false;
       inline_height = 0;
+    };
+  };
+
+  programs.kitty = {
+    enable = true;
+    themeFile = "citylights";
+    settings = {
+      "font_size" = 12;
+      "window_padding_width" = 2;
     };
   };
 }

@@ -60,6 +60,11 @@
     };
   };
 
+  # use kitten diff as difftool
+  programs.kitty = {
+    enableGitIntegration = true;
+  };
+
   programs.gh = {
     enable = true;
     extensions = with pkgs; [
