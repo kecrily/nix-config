@@ -37,6 +37,10 @@
     ];
   };
 
+  programs.eza = {
+    enable = true;
+  };
+
   programs.atuin = {
     enable = true;
     settings = {
