@@ -14,6 +14,7 @@
   ];
 
   home.file.".hushlogin".text = "";
+  home.file.".zshenv".enable = false;
 
   home.shell.enableZshIntegration = true;
   programs.zsh = {

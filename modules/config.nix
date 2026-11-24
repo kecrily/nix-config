@@ -65,4 +65,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.pathsToLink = [ "/share/zsh" ];
+
+  environment.variables = {
+    ZDOTDIR = "$HOME/.config/zsh";
+  };
 }
