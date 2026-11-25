@@ -1,5 +1,5 @@
 {
-  // Preferences
+  // Style
   "window.density.layout": "compact",
   "window.commandCenter": true,
   "window.autoDetectColorScheme": true,
@@ -21,12 +21,13 @@
 
   // Editor
   "editor.tabSize": 2,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
-  "editor.formatOnType": true,
   "editor.linkedEditing": true,
   "editor.inlayHints.enabled": "onUnlessPressed",
   "editor.wordSeparators": "`~@#$%^&*-=+\\|'\"_,./!?;:()[]{}<>，、。！？：；…—（）【】《》〈〉“”‘’「」『』",
@@ -38,9 +39,10 @@
   "files.insertFinalNewline": true,
   "files.eol": "\n",
   "files.autoGuessEncoding": true,
+  "files.readonlyFromPermissions": true,
+  "files.dialog.defaultPath": "/Users/kecrily/desktop/project/github.com",
 
   // Explorer
-  "files.dialog.defaultPath": "/Users/kecrily/desktop/project/github.com",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "search.exclude": {
@@ -70,6 +72,7 @@
   "diffEditor.experimental.showMoves": true,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.experimental.useTrueInlineView": true,
+  "multiDiffEditor.experimental.fileList": true,
   "git.mergeEditor": true,
   "mergeEditor.diffAlgorithm": "advanced",
   "merge-conflict.autoNavigateNextConflict.enabled": true,
@@ -77,8 +80,11 @@
   // Notebook
   "notebook.output.minimalErrorRendering": true,
 
-  // TypeScript
+  // JavaScript & TypeScript
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
   "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "npm.enableRunFromFolder": true,
 
   // ESLint
   "eslint.lintTask.enable": true,
@@ -98,7 +104,6 @@
 
   // Markdown
   "markdown.validate.enabled": true,
-  "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
   "markdown.updateLinksOnFileMove.enabled": "always",
   "markdown.preview.typographer": true,
   "[markdown]": {
