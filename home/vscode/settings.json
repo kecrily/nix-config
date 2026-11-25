@@ -29,10 +29,6 @@
   },
   "editor.formatOnType": true,
   "editor.linkedEditing": true,
-  "editor.pasteAs.enabled": true,
-  "editor.stickyScroll.enabled": true,
-  "editor.inlineSuggest.enabled": true,
-  "editor.experimental.asyncTokenization": true,
   "editor.inlayHints.enabled": "onUnlessPressed",
   "editor.wordSeparators": "`~@#$%^&*-=+\\|'\"_,./!?;:()[]{}<>，、。！？：；…—（）【】《》〈〉“”‘’「」『』",
   "editor.experimental.preferTreeSitter.css": true,
@@ -40,7 +36,6 @@
   "editor.experimental.preferTreeSitter.regex": true,
   "editor.experimental.preferTreeSitter.typescript": true,
   "editor.experimentalGpuAcceleration": "on",
-  "editor.experimentalEditContextEnabled": true,
   "files.insertFinalNewline": true,
   "files.eol": "\n",
   "files.autoGuessEncoding": true,
@@ -49,7 +44,6 @@
   "files.dialog.defaultPath": "/Users/kecrily/desktop/project/github.com",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
-  "search.useIgnoreFiles": true,
   "search.exclude": {
     "**/package-lock.json": true,
     "**/yarn.lock": true,
@@ -73,10 +67,8 @@
   "git.enableSmartCommit": true,
   "git.enableCommitSigning": true,
   "git.allowNoVerifyCommit": true,
-  "diffEditor.diffAlgorithm": "advanced",
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.experimental.showMoves": true,
-  "diffEditor.experimental.showEmptyDecorations": true,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.experimental.useTrueInlineView": true,
   "git.mergeEditor": true,
@@ -87,13 +79,10 @@
   "notebook.output.minimalErrorRendering": true,
 
   // TypeScript
-  "typescript.tsserver.watchOptions": "vscode",
   "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
 
   // ESLint
-  "eslint.useFlatConfig": true,
   "eslint.lintTask.enable": true,
-  "eslint.codeAction.showDocumentation": { "enable": true },
   "eslint.validate": [
     "markdown",
     "vue",
@@ -113,7 +102,6 @@
   "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
   "markdown.updateLinksOnFileMove.enabled": "always",
   "markdown.preview.typographer": true,
-  "markdown.experimental.updateLinksOnPaste": true,
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.quickSuggestions": {
