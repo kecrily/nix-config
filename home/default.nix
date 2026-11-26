@@ -1,10 +1,12 @@
 {
+  inputs,
   pkgs,
   ...
 }:
 
 {
   imports = [
+    inputs.multiverse.homeManagerModules.default
     ./base.nix
     ./shell.nix
     ./gpg.nix
@@ -49,11 +51,4 @@
 
     obsidian
   ];
-
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/etc/nix-darwin";
-  };
 }

@@ -25,6 +25,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    multiverse.url = "github:fzakaria/nixpkgs-multiverse";
   };
 
   outputs =
