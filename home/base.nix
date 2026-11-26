@@ -1,13 +1,16 @@
 { ... }:
 
 {
-  xdg.enable = true;
   programs.home-manager.enable = true;
 
   home = {
     stateVersion = "25.05";
     preferXdgDirectories = true;
-    sessionPath = [ "$HOME/.local/bin" ];
+  };
+
+  xdg = {
+    enable = true;
+    localBinInPath = true;
   };
 
   multiverse = {

@@ -19,7 +19,7 @@
   home.shell.enableZshIntegration = true;
   programs.zsh = {
     enable = true;
-    dotDir = "${config.home.homeDirectory}/.config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
     history.path = "${config.xdg.dataHome}/zsh/zsh_history";
     enableCompletion = true;
     autosuggestion.enable = true;
