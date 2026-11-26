@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ pkgs, config, ... }:
 
 let
   npmCorepack = pkgs.writeShellScriptBin "npm" ''

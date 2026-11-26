@@ -1,3 +1,5 @@
+{ inputs, ... }:
+
 {
   system = {
     # Used for backwards compatibility, please read the changelog before changing.
@@ -10,6 +12,7 @@
         tilesize = 64;
       };
     };
+    configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   };
 
   users.users.kecrily = {

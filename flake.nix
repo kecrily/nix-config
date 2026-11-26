@@ -27,45 +27,23 @@
     };
 
     multiverse.url = "github:fzakaria/nixpkgs-multiverse";
+    import-tree.url = "github:denful/import-tree";
   };
 
   outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      nix-darwin,
-      home-manager,
-      ...
-    }:
+    inputs:
     let
       system = "aarch64-darwin";
     in
     {
-      darwinConfigurations.pm7-macbook = nix-darwin.lib.darwinSystem {
+      darwinConfigurations.pm7-macbook = inputs.nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs system; };
         modules = [
-          {
-            _module.args = inputs // {
-              inherit system;
-            };
-            system.configurationRevision = self.rev or self.dirtyRev or null;
-          }
-
           ./systems/darwin.nix
-          ./modules/config.nix
-
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "bak";
-            home-manager.users.kecrily = import ./home;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-          }
+          (inputs.import-tree ./modules)
         ];
       };
 
-      formatter."${system}" = nixpkgs.legacyPackages."${system}".nixfmt-tree;
+      formatter."${system}" = inputs.nixpkgs.legacyPackages."${system}".nixfmt-tree;
     };
 }

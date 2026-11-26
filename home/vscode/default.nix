@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}:
+{ config, ... }:
 
 let
   vscodeHome = "${config.xdg.dataHome}/vscode";
