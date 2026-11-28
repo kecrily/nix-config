@@ -26,24 +26,30 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-parts.url = "github:hercules-ci/flake-parts";
     multiverse.url = "github:fzakaria/nixpkgs-multiverse";
     import-tree.url = "github:denful/import-tree";
   };
 
   outputs =
     inputs:
-    let
-      system = "aarch64-darwin";
-    in
-    {
-      darwinConfigurations.pm7-macbook = inputs.nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit inputs system; };
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "aarch64-darwin" ];
+      debug = true;
+
+      flake.darwinConfigurations.pm7-macbook = inputs.nix-darwin.lib.darwinSystem {
+        specialArgs = {
+          inherit inputs;
+          system = "aarch64-darwin";
+        };
         modules = [
           ./systems/darwin.nix
           (inputs.import-tree ./modules)
         ];
       };
 
-      formatter."${system}" = inputs.nixpkgs.legacyPackages."${system}".nixfmt-tree;
+      perSystem = { pkgs, ... }: {
+        formatter = pkgs.nixfmt-tree;
+      };
     };
 }
